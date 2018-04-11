@@ -1,7 +1,7 @@
 class FavoritesController < ApplicationController
   def index
     @q = Favorite.ransack(params[:q])
-    @favorites = @q.result(:distinct => true).includes(:venue, :dishes, :cuisines).page(params[:page]).per(10)
+    @favorites = @q.result(:distinct => true).includes(:venue, :dishes).page(params[:page]).per(10)
 
     render("favorites/index.html.erb")
   end
