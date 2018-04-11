@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   root :to => "dishes#index"
   # Routes for the Favorite resource:
   # CREATE
