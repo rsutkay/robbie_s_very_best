@@ -6,6 +6,7 @@ class FavoritesController < ApplicationController
   end
 
   def show
+    @dish = Dish.new
     @favorite = Favorite.find(params[:id])
 
     render("favorites/show.html.erb")
