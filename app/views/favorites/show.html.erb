@@ -92,34 +92,3 @@
     </ul>
   </div>
 </div>
-
-<!-- A Favorite has many cuisines -->
-
-<div class="row">
-  <div class="col-md-12">
-    <ul class="list-group">
-      <li class="list-group-item list-group-item-info">
-        Cuisines
-      </li>
-
-      <% @favorite.cuisines.each do |cuisine| %>
-        <li class="list-group-item">
-          <a href="/cuisines/<%= cuisine.id %>">
-            <%= cuisine.name %>
-          </a>
-          <div class="btn-group btn-group-xs pull-right">
-            <a href="/cuisines/<%= cuisine.id %>" class="btn btn-primary">
-              <i class="fa fa-search-plus"></i>
-            </a>
-            <a href="/cuisines/<%= cuisine.id %>/edit" class="btn btn-warning">
-              <i class="fa fa-edit"></i>
-            </a>
-            <a href="/delete_cuisine/<%= cuisine.id %>" class="btn btn-danger" rel="nofollow">
-              <i class="fa fa-trash-o"></i>
-            </a>
-          </div>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-</div>

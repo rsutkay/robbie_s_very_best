@@ -8,10 +8,6 @@ class Favorite < ApplicationRecord
 
   # Indirect associations
 
-  has_many   :cuisines,
-             :through => :dishes,
-             :source => :cuisine
-
   # Validations
 
 end
