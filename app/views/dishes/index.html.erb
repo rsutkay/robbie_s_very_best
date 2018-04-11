@@ -18,8 +18,20 @@
       <% @dishes.each do |dish| %>
       <tr>
         <td><%= dish.name %></td>
-        <td><%= dish.cuisine.name %></td>
-        <td><%= dish.favorite.venue_id %></td>
+        <td>
+          <% if dish.cuisine.present? %>
+            <a href="/cuisines/<%= dish.cuisine.id %>">
+              <%= dish.cuisine.name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if dish.favorite.present? %>
+            <a href="/favorites/<%= dish.favorite.id %>">
+              <%= dish.favorite.venue_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/dishes/<%= dish.id %>" class="btn btn-primary">Show</a>
           <a href="/dishes/<%= dish.id %>/edit" class="btn btn-warning">Edit</a>
